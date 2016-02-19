@@ -1,7 +1,183 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+  <title>Калькулятор умножения матриц</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link tipe="text/css" rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div class="wrapper">
+    <div class="right">
+      <div class="matrix" id="matrix_C">
+        <table>
+          <tr>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+            <td>
+              <input type="number" disabled>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="matrix">
+        <table id="matrix_A">
+          <tr>
+            <td>
+              <input type="number">
+            </td>
+            <td>
+              <input type="number">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number">
+            </td>
+            <td>
+              <input type="number">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number">
+            </td>
+            <td>
+              <input type="number">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number">
+            </td>
+            <td>
+              <input type="number">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="matrix" id="caption">
+        <p>A</p>
+      </div>
+      <table id="matrix_B">
+        <caption>B</caption>
+        <tr>
+          <td>
+            <input type="number">
+          </td>
+          <td>
+            <input type="number">
+          </td>
+          <td>
+            <input type="number">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="number">
+          </td>
+          <td>
+            <input type="number">
+          </td>
+          <td>
+            <input type="number">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="left">
+      <div class="button_inner" id="multiply">
+        <label>Умножить матрицы
+          <input type="button" onclick="multiplyMatrix()" />
+        </label>
+      </div>
+      <div class="button_inner" id="clean">
+        <label><img src="picture\arrow.png"> Очистить матрицы
+          <input type="button" onclick="clean()" />
+        </label>
+      </div>
+      <div class="button_inner" id="change">
+        <label><img src="picture\double_arrow.png"> Поменять матрицы местами
+          <input type="button" id="change_matrix" onclick="change()" />
+        </label>
+      </div>
+      <div class="button_col" id="left_col">
+        <label>
+          <input type="radio" checked name="check_matrix" id="check_A">Матрица А</label>
+        <div class="table_buttons">
+          <label><img src="picture\plus.png"> Добавить
+            <input type="button" onclick="addRow()" />
+          </label>
+        </div>
+        <div class="table_buttons matrix_A">
+          <label><img src="picture\plus.png"> Добавить
+            <input type="button" onclick="addCol()" />
+          </label>
+        </div>
+      </div>
+      <div class="button_col">
+        <label>
+          <input type="radio" name="check_matrix" id="check_B">Матрица В</label>
+        <div class="table_buttons">
+          <label><img src="picture\minus.png"> Удалить
+            <input type="button" onclick="deleteRow()" />
+          </label>
+        </div>
+        <div class="table_buttons matrix_A">
+          <label><img src="picture\minus.png"> Удалить
+            <input type="button" onclick="deleteCol()" />
+          </label>
+        </div>
+      </div>
+      <div class="button_col">
+        <p>строку</p>
+        <p>столбец</p>
+      </div>
+      <div class="cantMultiply">
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
