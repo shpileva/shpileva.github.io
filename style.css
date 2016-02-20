@@ -52,8 +52,6 @@ td {
   height: inherit;
   width: inherit;
   text-align: center;
-}
-input[type='number'] {
   border: none;
 }
 .right input {
@@ -120,6 +118,10 @@ input[type="radio"] {
   border: 12px solid #2ba11b;
   top: 7px;
   right: -12.5px;
+  -webkit-transform: rotate(55deg) skew(20deg);
+  -ms-transform: rotate(55deg) skew(20deg);
+  -moz-transform: rotate(55deg) skew(20deg);
+  -o-transform: rotate(55deg) skew(20deg);
   transform: rotate(55deg) skew(20deg);
   border-radius: 12%;
 }

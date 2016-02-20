@@ -16,7 +16,7 @@ function addRow() {
       var cell = row.insertCell();
       var element = document.createElement('input');
       // element.type = "number";
-      element.appendChild = ('type = number');
+      element.setAttribute('type', 'number');
       cell.appendChild(element);
       numberLimit();
     }
