@@ -4,10 +4,10 @@
 <head>
   <title>Калькулятор умножения матриц</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link tipe="text/css" rel="stylesheet" href="style.css" />
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
+  <script src="script.js"></script>
 </head>
 
 <body>
@@ -17,82 +17,82 @@
         <table>
           <tr>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c1,1" disabled>
             </td>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c1,2" disabled>
             </td>
             <td>
-              <input type="number" disabled>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="number" disabled>
-            </td>
-            <td>
-              <input type="number" disabled>
-            </td>
-            <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c1,3" disabled>
             </td>
           </tr>
           <tr>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c2,1" disabled>
             </td>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c2,2" disabled>
             </td>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c2,3" disabled>
             </td>
           </tr>
           <tr>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c3,1" disabled>
             </td>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c3,2" disabled>
             </td>
             <td>
-              <input type="number" disabled>
+              <input type="number" placeholder="c3,3" disabled>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" placeholder="c4,1" disabled>
+            </td>
+            <td>
+              <input type="number" placeholder="c4,2" disabled>
+            </td>
+            <td>
+              <input type="number" placeholder="c4,3" disabled>
             </td>
           </tr>
         </table>
       </div>
       <div class="matrix">
-        <table id="matrix_A">
+        <table class="remove matrix_A" id="matrix_A">
           <tr>
             <td>
-              <input type="number">
+              <input type="number" placeholder="a1,1">
             </td>
             <td>
-              <input type="number">
+              <input type="number" placeholder="a1,2">
             </td>
           </tr>
           <tr>
             <td>
-              <input type="number">
+              <input type="number" placeholder="a2,1">
             </td>
             <td>
-              <input type="number">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="number">
-            </td>
-            <td>
-              <input type="number">
+              <input type="number" placeholder="a2,2">
             </td>
           </tr>
           <tr>
             <td>
-              <input type="number">
+              <input type="number" placeholder="a3,1">
             </td>
             <td>
-              <input type="number">
+              <input type="number" placeholder="a3,2">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" placeholder="a4,1">
+            </td>
+            <td>
+              <input type="number" placeholder="a4,2">
             </td>
           </tr>
         </table>
@@ -100,28 +100,28 @@
       <div class="matrix" id="caption">
         <p>A</p>
       </div>
-      <table id="matrix_B">
+      <table class="remove matrix_B" id="matrix_B">
         <caption>B</caption>
         <tr>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b1,1">
           </td>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b1,2">
           </td>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b1,3">
           </td>
         </tr>
         <tr>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b2,1">
           </td>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b2,2">
           </td>
           <td>
-            <input type="number">
+            <input type="number" placeholder="b2,3">
           </td>
         </tr>
       </table>

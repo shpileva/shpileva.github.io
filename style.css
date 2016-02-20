@@ -32,11 +32,10 @@ table {
   margin: 20px 0px 0px 40px;
   border-collapse: separate;
   border-spacing: 8px;
-  /*border: 5px solid transparent;*/
+  border: 5px solid transparent;
   border-left: 5px solid #696969;
   border-right: 5px solid #696969;
-  border-image: url(picture/border.jpg);
-  border-image-slice: 30;
+  border-image: url(picture/border.jpg) 30;
 }
 td {
   height: 40px;
@@ -45,6 +44,7 @@ td {
   border-top: 1px solid rgba(102, 104, 107, 0.5);
   text-align: center;
 }
+
 .right input:focus {
   border: 1px solid #72a9e0;
 }

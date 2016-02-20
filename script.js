@@ -36,7 +36,7 @@ function addCol() {
     for (var i = 0; i < table.rows.length; i++) {
       var cell = table.rows[i].insertCell(-1);
       var element = document.createElement("input");
-      element.type = "number";
+      element.setAttribute('type', 'number');
       cell.appendChild(element);
       numberLimit()
     }
@@ -90,8 +90,8 @@ function addMatrixC(a) {
   conteiner.appendChild(table);
 }
 
-function readMatrix(tableID) {
-  var $matrixA = $(tableID);
+function readMatrix(tableClass) {
+  var $matrixA = $(tableClass);
   var $trs = $matrixA.find('tr');
   var A = [];
   $trs.each(function(i) {
@@ -108,27 +108,9 @@ function canMultiply(A, B) {
   return A[0].length === B.length;
 }
 
-// $(document).ready(function() {
-//   $('input[id="change_matrix"]').click(function() {
-//     if ($(this).is(':checked')) {
-//       $('#matrix_A').removeClass('matrix');
-//       $('#matrix_B').addClass('matrix');
-//       $('#matrix_B').after($('#matrix_A'));
-//       $('#caption').remove();
-//       $('#matrix_A').append('<caption>A</caption>')
-//         .css('font-size', '30px');
-//       $('#matrix_A').css('caption-side', 'bottom');
-//     }
-//   });
-// });
-
 function multiplyMatrix() {
-  // if ($('#change_matrix').is(':checked')) {
-  //   var A = readMatrix('#matrix_B');
-  //   var B = readMatrix('#matrix_A');
-  // } else {
-  var A = readMatrix('#matrix_A');
-  var B = readMatrix('#matrix_B');
+  var A = readMatrix('.matrix_A');
+  var B = readMatrix('.matrix_B');
   // };
   if (!canMultiply(A, B)) {
     if ($('#change_matrix').is(':checked')) {
@@ -172,10 +154,24 @@ function numberLimit() {
     this.value = $value;
   });
 }
-// function change() {
-//   var $A = readMatrix('#matrix_A');
-//   var $B = readMatrix('#matrix_B');
-//   $(document).ready(function() {
-//     $('#matrix_A').replaceWith(readMatrix('#matrix_B'));
+
+function change() {
+  $(document).ready(function() {
+    $('.remove').toggleClass('matrix_A');
+    $('.remove').toggleClass('matrix_B');
+  });
+}
+
+// $(document).ready(function() {
+//   $('input[id="change_matrix"]').click(function() {
+//     if ($(this).is(':checked')) {
+//       $('#matrix_A').removeClass('matrix');
+//       $('#matrix_B').addClass('matrix');
+//       $('#matrix_B').after($('#matrix_A'));
+//       $('#caption').remove();
+//       $('#matrix_A').append('<caption>A</caption>')
+//         .css('font-size', '30px');
+//       $('#matrix_A').css('caption-side', 'bottom');
+//     }
 //   });
-// }
+// });
