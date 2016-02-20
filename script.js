@@ -14,9 +14,11 @@ function addRow() {
     var row = table.insertRow(rowCount);
     for (var i = 0; i < table.rows[0].cells.length; i++) {
       var cell = row.insertCell();
-      var element = document.createElement("input");
-      element.type = "number";
+      var element = document.createElement('input');
+      // element.type = "number";
+      element.appendChild = ('type = number');
       cell.appendChild(element);
+      numberLimit();
     }
   }
 }
@@ -36,6 +38,7 @@ function addCol() {
       var element = document.createElement("input");
       element.type = "number";
       cell.appendChild(element);
+      numberLimit()
     }
   }
 }
@@ -67,9 +70,7 @@ $(document).ready(function() {
 });
 
 function addMatrixC(a) {
-  $(document).ready(function() {
-    $('#matrix_C').empty();
-  });
+  $('#matrix_C').empty();
   var conteiner = document.getElementById('matrix_C');
   var table = document.createElement('table');
   var tbody = document.createElement('tbody');
@@ -160,8 +161,7 @@ function clean() {
     $('input').val('');
   });
 }
-
-$(document).ready(function() {
+function numberLimit() {
   $('input').keyup(function() {
     var $value = this.value;
     if ($value > 10) {
@@ -171,8 +171,7 @@ $(document).ready(function() {
     };
     this.value = $value;
   });
-});
-
+}
 // function change() {
 //   var $A = readMatrix('#matrix_A');
 //   var $B = readMatrix('#matrix_B');
