@@ -61,8 +61,8 @@
           </tr>
         </table>
       </div>
-      <div class="matrix">
-        <table class="remove matrix_A" id="matrix_A">
+      <div class="matrix" id="container_A">
+        <table id="matrix_A">
           <tr>
             <td>
               <input type="number" placeholder="a1,1">
@@ -100,31 +100,33 @@
       <div class="matrix" id="caption">
         <p>A</p>
       </div>
-      <table class="remove matrix_B" id="matrix_B">
-        <caption>B</caption>
-        <tr>
-          <td>
-            <input type="number" placeholder="b1,1">
-          </td>
-          <td>
-            <input type="number" placeholder="b1,2">
-          </td>
-          <td>
-            <input type="number" placeholder="b1,3">
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="number" placeholder="b2,1">
-          </td>
-          <td>
-            <input type="number" placeholder="b2,2">
-          </td>
-          <td>
-            <input type="number" placeholder="b2,3">
-          </td>
-        </tr>
-      </table>
+      <div id="container_B">
+        <table id="matrix_B">
+          <caption>B</caption>
+          <tr>
+            <td>
+              <input type="number" placeholder="b1,1">
+            </td>
+            <td>
+              <input type="number" placeholder="b1,2">
+            </td>
+            <td>
+              <input type="number" placeholder="b1,3">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="number" placeholder="b2,1">
+            </td>
+            <td>
+              <input type="number" placeholder="b2,2">
+            </td>
+            <td>
+              <input type="number" placeholder="b2,3">
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
     <div class="left">
       <div class="button_inner" id="multiply">

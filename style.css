@@ -24,7 +24,7 @@ html, body {
   font-size: 30px;
   margin-left: 20px;
 }
-#matrix_B {
+#conteiner_B {
   font-size: 30px;
   caption-side: bottom;
 }
@@ -44,7 +44,6 @@ td {
   border-top: 1px solid rgba(102, 104, 107, 0.5);
   text-align: center;
 }
-
 .right input:focus {
   border: 1px solid #72a9e0;
 }
