@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
+  <script src="number-polyfill.js"></script>
   <script src="script.js"></script>
 </head>
 
@@ -97,12 +98,11 @@
           </tr>
         </table>
       </div>
-      <div class="matrix" id="caption">
+      <div class="matrix" id="caption_A">
         <p>A</p>
       </div>
       <div id="container_B">
         <table id="matrix_B">
-          <caption>B</caption>
           <tr>
             <td>
               <input type="number" placeholder="b1,1">
@@ -126,6 +126,9 @@
             </td>
           </tr>
         </table>
+        <div id="caption_B">
+          <p>B</p>
+        </div>
       </div>
     </div>
     <div class="left">

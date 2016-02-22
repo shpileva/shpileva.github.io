@@ -159,6 +159,10 @@ function numberLimit() {
   });
 }
 
+$(document).ready(function() {
+  numberLimit();
+});
+
 function change() {
   var $matrixA = $('#container_A table');
   var $matrixB = $('#container_B table');

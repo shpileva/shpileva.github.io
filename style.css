@@ -20,13 +20,13 @@ html, body {
   display: inline-block;
   vertical-align: middle;
 }
-#caption {
+#caption_A {
   font-size: 30px;
   margin-left: 20px;
 }
-#conteiner_B {
+#caption_B {
   font-size: 30px;
-  caption-side: bottom;
+  margin: 20px 0px 0px 120px;
 }
 table {
   margin: 20px 0px 0px 40px;
