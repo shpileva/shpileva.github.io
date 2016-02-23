@@ -1,6 +1,6 @@
 function check() {
   if ($('.table_buttons').hasClass('matrix_A')) {
-    var tableID = ('matrix_A');
+    var tableID = ('#matrix_A');
   } else if ($('.table_buttons').hasClass('matrix_B')) {
     var tableID = ('matrix_B');
   }
@@ -8,25 +8,30 @@ function check() {
 }
 
 function addRow() {
-  var table = document.getElementById(check());
-  if (check() === 'matrix_A') {
-    var mark = 'a';
-  } else {
-    var mark = 'b';
-  }
-  var rowCount = table.rows.length;
-  if (rowCount < 10) {
-    var row = table.insertRow(rowCount);
-    for (var i = 0; i < table.rows[0].cells.length; i++) {
-      var cell = row.insertCell();
-      var element = document.createElement('input');
-      element.setAttribute('type', 'number');
-      element.setAttribute('placeholder', (mark + (rowCount + 1) + ',' + (i + 1)));
-      cell.appendChild(element);
-      numberLimit();
-    }
-  }
+
 }
+
+// function addRow() {
+//   var table = document.getElementById(check());
+//   if (check() === 'matrix_A') {
+//     var mark = 'a';
+//   } else {
+//     var mark = 'b';
+//   }
+//   var rowCount = table.rows.length;
+//   if (rowCount < 10) {
+//     var row = table.insertRow(rowCount);
+//     for (var i = 0; i < table.rows[0].cells.length; i++) {
+//       var cell = row.insertCell();
+//       var element = document.createElement('input');
+//       element.setAttribute('type', 'number');
+//       element.setAttribute('placeholder', (mark + (rowCount + 1) + ',' + (i + 1)));
+//       cell.appendChild(element);
+//       numberLimit();
+//       placeholder();
+//     }
+//   }
+// }
 
 function deleteRow() {
   var table = document.getElementById(check());
@@ -50,7 +55,8 @@ function addCol() {
       element.setAttribute('type', 'number');
       element.setAttribute('placeholder', (mark + (i + 1) + ',' + (table.rows[0].cells.length)));
       cell.appendChild(element);
-      numberLimit()
+      numberLimit();
+      placeholder();
     }
   }
 }
@@ -150,11 +156,16 @@ function clean() {
 function numberLimit() {
   $('input').keyup(function() {
     var $value = this.value;
-    if ($value > 10) {
-      $value = 10;
-    } else if ($value < 0) {
-      $value = 0;
-    };
+    var $isNumber = !isNaN($value);
+    if ($isNumber) {
+      if ($value > 10) {
+        $value = 10;
+      } else if ($value < 0) {
+        $value = 0;
+      };
+    } else {
+      $value = '';
+    }
     this.value = $value;
   });
 }
@@ -169,3 +180,11 @@ function change() {
   $('#container_A').append($matrixB);
   $('#container_B').append($matrixA);
 }
+
+function placeholder() {
+  $('input, textarea').placeholder();
+}
+
+$(document).ready(function() {
+  placeholder();
+});
