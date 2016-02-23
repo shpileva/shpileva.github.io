@@ -1,3 +1,24 @@
+$(document).ready(function() {
+  $('input[id="check_A"]').click(function() {
+    if ($(this).is(':checked')) {
+      $('.table_buttons').addClass('matrix_A');
+      $('.table_buttons').removeClass('matrix_B');
+    }
+  });
+  $('input[id="check_B"]').click(function() {
+    if ($(this).is(':checked')) {
+      $('.table_buttons').addClass('matrix_B');
+      $('.table_buttons').removeClass('matrix_A');
+    }
+  });
+  $('td').keydown(function() {
+    $('.left').css('background-color', 'rgba(81, 147, 232, 1)');
+    $('.cantMultiply').empty();
+  });
+  numberLimit();
+  placeholder();
+});
+
 function check() {
   if ($('.table_buttons').hasClass('matrix_A')) {
     var tableID = ('#matrix_A');
@@ -7,103 +28,69 @@ function check() {
   return tableID;
 }
 
-
-// function addRow() {
-//   var table = document.getElementById(check());
-//   if (check() === 'matrix_A') {
-//     var mark = 'a';
-//   } else {
-//     var mark = 'b';
-//   }
-//   var rowCount = table.rows.length;
-//   if (rowCount < 10) {
-//     var row = table.insertRow(rowCount);
-//     for (var i = 0; i < table.rows[0].cells.length; i++) {
-//       var cell = row.insertCell();
-//       var element = document.createElement('input');
-//       element.setAttribute('type', 'number');
-//       element.setAttribute('placeholder', (mark + (rowCount + 1) + ',' + (i + 1)));
-//       cell.appendChild(element);
-//       numberLimit();
-//       placeholder();
-//     }
-//   }
-// }
-
-function deleteRow() {
-  var table = document.getElementById(check());
-  if (table.rows.length > 2) {
-    table.deleteRow(-1);
-  }
-}
-
-function addCol() {
- var $table = $(check());
- var $row = $table.find('tr');
- var $rowFirst = $table.find('tr:first');
- var $length = $rowFirst.find('td').length;
-if (check() === 'matrix_A') {
+function addRow() {
+  var $table = $(check());
+  var $newRow = $('<tr></tr>');
+  var $rowFirst = $table.find('tr:first');
+  var rowLength = $rowFirst.find('td').length;
+  var colLength = $table.find('tr').length;
+  if (check() === '#matrix_A') {
     var mark = 'a';
   } else {
     var mark = 'b';
   }
- if( $length < 10) {
- $row.each(function() {
-  var $col = $(this).append('<td><input type="number"></td>');
-  var $in = $col.find('input');
-  // $in.attr('placeholder', (mark + ($row.length + 1) + ',' + ($col.length + 1)));
-      numberLimit();
-      placeholder();
-});
-}
-}
-
-// function addCol() {
-//   var table = document.getElementById(check());
-//   var rowCount = table.rows.length;
-//   if (check() === 'matrix_A') {
-//     var mark = 'a';
-//   } else {
-//     var mark = 'b';
-//   }
-//   if (table.rows[0].cells.length < 10) {
-//     for (var i = 0; i < rowCount; i++) {
-//       var cell = table.rows[i].insertCell(-1);
-//       var element = document.createElement("input");
-//       element.setAttribute('type', 'number');
-//       element.setAttribute('placeholder', (mark + (i + 1) + ',' + (table.rows[0].cells.length)));
-//       cell.appendChild(element);
-//       numberLimit();
-//       placeholder();
-//     }
-//   }
-// }
-
-function deleteCol() {
-  var table = document.getElementById(check());
-  if (table.rows[0].cells.length > 2) {
-    for (var i = table.rows.length - 1; i >= 0; i--) {
-      table.rows[i].deleteCell(-1);
+  if (colLength < 10) {
+    for (var i = 0; i < rowLength; i++) {
+      var placeholderValue = mark + (colLength + 1) + ',' + (i + 1);
+      $newRow.append('<td><input type="number" placeholder="' + placeholderValue + '"></td>');
     }
+    $table.append($newRow);
+    numberLimit();
+    placeholder();
   }
 }
 
-$(document).ready(function() {
-  $('input[id="check_A"]').click(function() {
-    if ($(this).is(':checked')) {
-      $('.table_buttons').addClass('matrix_A');
-      $('.table_buttons').removeClass('matrix_B');
-    }
-  });
-});
-$(document).ready(function() {
-  $('input[id="check_B"]').click(function() {
-    if ($(this).is(':checked')) {
-      $('.table_buttons').addClass('matrix_B');
-      $('.table_buttons').removeClass('matrix_A');
-    }
-  });
-});
+function deleteRow() {
+  var $table = $(check());
+  var rowLength = $table.find('tr').length;
+  var $row = $table.find('tr:last');
+  if (rowLength > 2) {
+    $row.remove();
+  }
+}
+
+function addCol() {
+  var $table = $(check());
+  var $row = $table.find('tr');
+  var $rowFirst = $table.find('tr:first');
+  var rowLength = $rowFirst.find('td').length;
+  if (check() === '#matrix_A') {
+    var mark = 'a';
+  } else {
+    var mark = 'b';
+  }
+  if (rowLength < 10) {
+    $row.each(function(i) {
+      var placeholderValue = mark + (i + 1) + ',' + (rowLength + 1);
+      var $col = $(this).append('<td><input type="number" placeholder="' + placeholderValue + '"></td>');
+      numberLimit();
+      placeholder();
+    });
+  }
+}
+
+function deleteCol() {
+  var $table = $(check());
+  var $row = $table.find('tr');
+  var $cell = $row.find('td:last');
+  var $rowFirst = $table.find('tr:first');
+  var length = $rowFirst.find('td').length;
+  if (length > 2) {
+    $row.each(function() {
+      $cell.remove();
+    });
+  }
+}
 
 function addMatrixC(a) {
   $('#matrix_C').empty();
@@ -158,39 +145,26 @@ function multiplyMatrix() {
   addMatrixC(C);
 }
 
-$(document).ready(function() {
-  $('td').keydown(function() {
-    $('.left').css('background-color', 'rgba(81, 147, 232, 1)');
-    $('.cantMultiply').empty();
-  });
-});
-
 function clean() {
-  $(document).ready(function() {
-    $('input').val('');
-  });
+  $('input').val('');
 }
 
 function numberLimit() {
   $('input').keyup(function() {
-    var $value = this.value;
-    var $isNumber = !isNaN($value);
-    if ($isNumber) {
-      if ($value > 10) {
-        $value = 10;
-      } else if ($value < 0) {
-        $value = 0;
+    var value = this.value;
+    var isNumber = !isNaN(value);
+    if (isNumber) {
+      if (value > 10) {
+        value = 10;
+      } else if (value < 0) {
+        value = 0;
       };
     } else {
-      $value = '';
+      value = '';
     }
-    this.value = $value;
+    this.value = value;
   });
 }
-
-$(document).ready(function() {
-  numberLimit();
-});
 
 function change() {
   var $matrixA = $('#container_A table');
@@ -202,7 +176,3 @@ function change() {
 function placeholder() {
   $('input, textarea').placeholder();
 }
-
-$(document).ready(function() {
-  placeholder();
-});
