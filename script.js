@@ -2,14 +2,11 @@ function check() {
   if ($('.table_buttons').hasClass('matrix_A')) {
     var tableID = ('#matrix_A');
   } else if ($('.table_buttons').hasClass('matrix_B')) {
-    var tableID = ('matrix_B');
+    var tableID = ('#matrix_B');
   }
   return tableID;
 }
 
-function addRow() {
-
-}
 
 // function addRow() {
 //   var table = document.getElementById(check());
@@ -41,25 +38,46 @@ function deleteRow() {
 }
 
 function addCol() {
-  var table = document.getElementById(check());
-  var rowCount = table.rows.length;
-  if (check() === 'matrix_A') {
+ var $table = $(check());
+ var $row = $table.find('tr');
+ var $rowFirst = $table.find('tr:first');
+ var $length = $rowFirst.find('td').length;
+if (check() === 'matrix_A') {
     var mark = 'a';
   } else {
     var mark = 'b';
   }
-  if (table.rows[0].cells.length < 10) {
-    for (var i = 0; i < rowCount; i++) {
-      var cell = table.rows[i].insertCell(-1);
-      var element = document.createElement("input");
-      element.setAttribute('type', 'number');
-      element.setAttribute('placeholder', (mark + (i + 1) + ',' + (table.rows[0].cells.length)));
-      cell.appendChild(element);
+ if( $length < 10) {
+ $row.each(function() {
+  var $col = $(this).append('<td><input type="number"></td>');
+  var $in = $col.find('input');
+  // $in.attr('placeholder', (mark + ($row.length + 1) + ',' + ($col.length + 1)));
       numberLimit();
       placeholder();
-    }
-  }
+});
 }
+}
+
+// function addCol() {
+//   var table = document.getElementById(check());
+//   var rowCount = table.rows.length;
+//   if (check() === 'matrix_A') {
+//     var mark = 'a';
+//   } else {
+//     var mark = 'b';
+//   }
+//   if (table.rows[0].cells.length < 10) {
+//     for (var i = 0; i < rowCount; i++) {
+//       var cell = table.rows[i].insertCell(-1);
+//       var element = document.createElement("input");
+//       element.setAttribute('type', 'number');
+//       element.setAttribute('placeholder', (mark + (i + 1) + ',' + (table.rows[0].cells.length)));
+//       cell.appendChild(element);
+//       numberLimit();
+//       placeholder();
+//     }
+//   }
+// }
 
 function deleteCol() {
   var table = document.getElementById(check());
