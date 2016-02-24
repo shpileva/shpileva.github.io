@@ -21,11 +21,11 @@ $(document).ready(function() {
 
 function check() {
   if ($('.table_buttons').hasClass('matrix_A')) {
-    var tableID = ('#matrix_A');
+    var tableClass = ('.table_A');
   } else if ($('.table_buttons').hasClass('matrix_B')) {
-    var tableID = ('#matrix_B');
+    var tableClass = ('.table_B');
   }
-  return tableID;
+  return tableClass;
 }
 
 function addRow() {
@@ -34,7 +34,7 @@ function addRow() {
   var $rowFirst = $table.find('tr:first');
   var rowLength = $rowFirst.find('td').length;
   var colLength = $table.find('tr').length;
-  if (check() === '#matrix_A') {
+  if (check() === '.table_A') {
     var mark = 'a';
   } else {
     var mark = 'b';
@@ -52,9 +52,9 @@ function addRow() {
 
 function deleteRow() {
   var $table = $(check());
-  var rowLength = $table.find('tr').length;
+  var colLength = $table.find('tr').length;
   var $row = $table.find('tr:last');
-  if (rowLength > 2) {
+  if (colLength > 2) {
     $row.remove();
   }
 }
@@ -64,7 +64,7 @@ function addCol() {
   var $row = $table.find('tr');
   var $rowFirst = $table.find('tr:first');
   var rowLength = $rowFirst.find('td').length;
-  if (check() === '#matrix_A') {
+  if (check() === '.table_A') {
     var mark = 'a';
   } else {
     var mark = 'b';
@@ -84,8 +84,8 @@ function deleteCol() {
   var $row = $table.find('tr');
   var $cell = $row.find('td:last');
   var $rowFirst = $table.find('tr:first');
-  var length = $rowFirst.find('td').length;
-  if (length > 2) {
+  var rowLength = $rowFirst.find('td').length;
+  if (rowLength > 2) {
     $row.each(function() {
       $cell.remove();
     });
@@ -170,7 +170,11 @@ function change() {
   var $matrixA = $('#container_A table');
   var $matrixB = $('#container_B table');
   $('#container_A').append($matrixB);
-  $('#container_B').append($matrixA);
+  $('#container_B').prepend($matrixA);
+  $matrixA.toggleClass('table_B');
+  $matrixA.toggleClass('table_A');
+  $matrixB.toggleClass('table_A');
+  $matrixB.toggleClass('table_B');
 }
 
 function placeholder() {
