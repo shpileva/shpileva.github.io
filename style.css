@@ -40,21 +40,19 @@ table {
 td {
   height: 40px;
   width: 40px;
-  border: 1px solid rgba(167, 167, 168, 0.5);
-  border-top: 1px solid rgba(102, 104, 107, 0.5);
   text-align: center;
-}
-.right input:focus {
-  border: 1px solid #72a9e0;
 }
 .right input {
   height: inherit;
   width: inherit;
   text-align: center;
-  border: none;
-}
-.right input {
+  border: 1px solid rgba(167, 167, 168, 0.5);
+  border-top: 1px solid rgba(102, 104, 107, 0.5);
   -moz-appearance: textfield;
+}
+.right input:focus {
+  outline: 2px solid #72a9e0;
+  border: 1px solid transparent;
 }
 input::-webkit-inner-spin-button {
   display: none;
@@ -129,18 +127,14 @@ input[type="radio"] {
 }
 #clean {
   width: 160px;
-  height: 30px;
+  height: 25px;
   background: linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
   margin-top: 50px;
   border-radius: 3%;
   text-align: center;
-}
-#clean img {
-  width: 18px;
-  height: 12px;
-  margin: 8px 0px 0px 0px;
+  padding-top: 5px;
 }
 #clean:hover {
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
@@ -152,18 +146,14 @@ input[type="radio"] {
 }
 #change {
   width: 220px;
-  height: 30px;
+  height: 25px;
   background: linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
   margin-top: 20px;
+  padding-top: 5px;
   border-radius: 3%;
   text-align: center;
-}
-#change img {
-  width: 10px;
-  height: 12px;
-  margin: 8px 0px 0px 0px;
 }
 #change:hover {
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
@@ -187,11 +177,6 @@ input[type="radio"] {
   padding-top: 5px;
   text-align: center;
 }
-.table_buttons img {
-  width: 11px;
-  height: 11px;
-  margin: 5px 0px 0px 0px;
-}
 .table_buttons:hover {
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
 }
@@ -209,4 +194,34 @@ input[type="radio"] {
 }
 .button_col p {
   margin-bottom: 21px;
+}
+.radio_buttons {
+  width: 14px;
+  height: 14px;
+  background: #F5F5F5;
+  border: 1px solid rgba(105, 106, 107, 0.5);
+  border-radius: 100%;
+  position: relative;
+  margin-bottom: -2px;
+}
+.radio_buttons input[type=radio] {
+  display: none;
+}
+.radio_buttons label {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  background: #F5F5F5;
+}
+.radio_buttons input[type=radio]:checked + label {
+  background: black;
+}
+.radio_name {
+  display: inline-block;
 }
