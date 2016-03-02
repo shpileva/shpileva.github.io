@@ -32,8 +32,8 @@
 }
 
 .icon-equlibrium:before {
-    content: "\e900" !important;
+    content: "\e900"; 
 }
 .icon-undo:before {
-    content: "\e901" !important;
+    content: "\e901";
 }
