@@ -81,38 +81,49 @@ input[type="radio"] {
   margin-left: 50px;
 }
 #multiply {
+  position: relative;
   width: 190px;
-  height: 32px;
-  border-left: 1px solid rgba(36, 112, 50, 0.5);
-  border-top: 1px solid rgba(36, 112, 50, 0.5);
+  height: 30px;
+  border: 1px solid rgba(36, 112, 50, 0.5);
   border-bottom: 1px solid rgba(1, 38, 8, 0.5);
-  background: linear-gradient(to top, #0c8a0c, #1aba1a);
+  background-color: #2ba11b;
   margin-top: 40px;
   border-radius: 3%;
   color: white;
   font-size: 16px;
   text-align: center;
   padding-top: 8px;
-  position: absolute;
-  z-index: 2;
 }
-#multiply_arrow {
-  height: 26px;
-  width: 26px;
-  background: linear-gradient(to top left, #0c8a0c, #1aba1a);
-  border: 1px solid rgba(36, 112, 50, 0.5);
-  transform: rotate(55deg) skew(16deg);
-  -moz-transform: rotate(55deg) skew(16deg);
-  -ms-transform: rotate(55deg) skew(16deg);
-  -webkit-transform: rotate(55deg) skew(16deg);
-  -o-transform: rotate(55deg) skew(16deg);
-  border-radius: 17%;
-  margin: 47px 0px 0px 227px;
+#multiply:before {
+  content: "";
+  display: block;
   position: absolute;
-  z-index: 1;
+  border: 12px solid rgba(7, 79, 20, 0.5);
+  top: 7px;
+  right: -13.5px;
+  -webkit-transform: rotate(55deg) skew(20deg);
+  -ms-transform: rotate(55deg) skew(20deg);
+  -moz-transform: rotate(55deg) skew(20deg);
+  -o-transform: rotate(55deg) skew(20deg);
+  transform: rotate(55deg) skew(20deg);
+  border-radius: 10%;
+}
+#multiply:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 12px solid #2ba11b;
+  top: 7px;
+  right: -12.5px;
+  -webkit-transform: rotate(55deg) skew(20deg);
+  -ms-transform: rotate(55deg) skew(20deg);
+  -moz-transform: rotate(55deg) skew(20deg);
+  -o-transform: rotate(55deg) skew(20deg);
+  transform: rotate(55deg) skew(20deg);
+  border-radius: 12%;
 }
 #multiply:active {
-  box-shadow: 0 1px 0 rgba(18, 74, 4, 0.5) inset;
+  box-shadow: 0 1px 1px rgba(18, 74, 4, 0.5) inset;
 }
 #clean {
   width: 160px;
@@ -120,7 +131,7 @@ input[type="radio"] {
   background: linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
-  margin-top: 150px;
+  margin-top: 50px;
   border-radius: 3%;
   text-align: center;
   padding-top: 5px;
