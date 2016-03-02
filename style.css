@@ -164,11 +164,6 @@ input[type="radio"] {
 #change input {
   display: none;
 }
-#change img {
-  width: 10px;
-  height: 12px;
-  margin: 8px 0px 0px 0px;
-}
 .icon-equlibrium {
   font-size: 14px;
 }

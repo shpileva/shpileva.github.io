@@ -1,6 +1,13 @@
 @font-face {
     font-family: 'icomoon';
     src:    url('fonts/icomoon.eot?gmg62w');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('fonts/icomoon.eot?gmg62w');
     src:    url('fonts/icomoon.eot?gmg62w#iefix') format('embedded-opentype'),
         url('fonts/icomoon.ttf?gmg62w') format('truetype'),
         url('fonts/icomoon.woff?gmg62w') format('woff'),
@@ -30,4 +37,3 @@
 .icon-undo:before {
     content: "\e901";
 }
-
