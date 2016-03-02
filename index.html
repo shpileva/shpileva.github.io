@@ -6,7 +6,6 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="open-iconic/font/css/open-iconic-foundation.css" />
   <link rel="stylesheet" href="icomoon/style.css" />
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.7.0/math.min.js"></script>
@@ -144,12 +143,14 @@
         </div>
       </label>
       <div class="button_inner" id="clean">
-        <label><span class="fi-action-undo"></span> Очистить матрицы
+        <label><span class="icon-undo"></span> Очистить матрицы
           <input type="button" onclick="clean()" />
         </label>
       </div>
       <div class="button_inner" id="change">
-        <label><span class="icon-equlibrium"></span> Поменять матрицы местами
+
+        <label><span class="icon-equlibrium"></span>
+          <!--[if IE 9]><img src="picture\double_arrow.png"><![endif]-->Поменять матрицы местами
           <input type="button" id="change_matrix" onclick="change()" />
         </label>
       </div>

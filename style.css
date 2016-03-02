@@ -87,6 +87,7 @@ input[type="radio"] {
   border-left: 1px solid rgba(36, 112, 50, 0.5);
   border-top: 1px solid rgba(36, 112, 50, 0.5);
   border-bottom: 1px solid rgba(1, 38, 8, 0.5);
+  background-color: #1aba1a;
   background: linear-gradient(to top, #0c8a0c, #1aba1a);
   margin-top: 40px;
   border-radius: 3%;
@@ -100,6 +101,7 @@ input[type="radio"] {
 #multiply_arrow {
   height: 26px;
   width: 26px;
+  background-color: #1aba1a;
   background: linear-gradient(to top left, #0c8a0c, #1aba1a);
   border: 1px solid rgba(36, 112, 50, 0.5);
   transform: rotate(55deg) skew(16deg);
@@ -118,8 +120,9 @@ input[type="radio"] {
 #clean {
   width: 160px;
   height: 25px;
+  background-color: #d9dbda;
   background: linear-gradient(to top, #d9dbda, #ffffff);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d9dbda,endColorstr=#ffffff);
+  background: -ms-linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
   margin-top: 130px;
@@ -128,6 +131,7 @@ input[type="radio"] {
   padding-top: 5px;
 }
 #clean:hover {
+  background-color: #c7c7c7;
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
 }
 #clean:active {
@@ -138,16 +142,18 @@ input[type="radio"] {
 #change {
   width: 220px;
   height: 25px;
+  background-color: #d9dbda;
   background: linear-gradient(to top, #d9dbda, #ffffff);
   background: -ms-linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
   margin-top: 20px;
-  padding: 3px 0px 3px 0px;
+  padding-top: 5px;
   border-radius: 3%;
   text-align: center;
 }
 #change:hover {
+  background-color: #c7c7c7;
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
 }
 #change:active {
@@ -158,15 +164,24 @@ input[type="radio"] {
 #change input {
   display: none;
 }
+#change img {
+  width: 10px;
+  height: 12px;
+  margin: 8px 0px 0px 0px;
+}
 .icon-equlibrium {
-  font-size: 18px;
+  font-size: 14px;
+}
+.icon-undo {
+  font-size: 16px;
 }
 .table_buttons {
   height: 25px;
   width: 100px;
   margin: 10px 5px 10px 0px;
+  background-color: #d9dbda;
   background: linear-gradient(to top, #d9dbda, #ffffff);
-  background: -ms-linear-gradient(270deg, #d9dbda, #ffffff);
+  background: -ms-linear-gradient(to top, #d9dbda, #ffffff);
   border: 1px solid rgba(105, 106, 107, 0.5);
   border-bottom: 1px solid rgba(30, 31, 33, 0.5);
   border-radius: 3%;
@@ -174,6 +189,7 @@ input[type="radio"] {
   text-align: center;
 }
 .table_buttons:hover {
+  background: #c7c7c7;
   background: linear-gradient(to top, #c7c7c7, #F5F5F5);
 }
 .table_buttons:active {
@@ -222,19 +238,19 @@ input[type="radio"] {
   display: inline-block;
 }
 @media screen and (max-width: 1080px) {
-.left {
-  width: 35%;
-}
-.right {
-  width: 65%;
-}
-.button_inner {
-  margin-left: 30px;
-}
-#left_col {
-  margin-left: 30px;
-}
-#multiply_arrow {
-  margin-left: 207px;
-}
+  .left {
+    width: 35%;
+  }
+  .right {
+    width: 65%;
+  }
+  .button_inner {
+    margin-left: 30px;
+  }
+  #left_col {
+    margin-left: 30px;
+  }
+  #multiply_arrow {
+    margin-left: 207px;
+  }
 }

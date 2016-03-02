@@ -1,0 +1,94 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M643 231v551h-169l261 242 264-242h-168v-551h-188z",
+					"M298 205l-264 242h163v550h189v-550h173l-261-242z"
+				],
+				"attrs": [],
+				"isMulticolor": false,
+				"grid": 0,
+				"tags": [
+					"icon_32x32_equlibrium_grey"
+				],
+				"colorPermutations": {
+					"25525525512626261": []
+				}
+			},
+			"attrs": [],
+			"properties": {
+				"order": 7,
+				"id": 1,
+				"prevSize": 32,
+				"code": 59648,
+				"name": "equlibrium"
+			},
+			"setIdx": 0,
+			"setId": 3,
+			"iconIdx": 2
+		},
+		{
+			"icon": {
+				"paths": [
+					"M560 371c-227.107 0-411 184.893-411 412 0 2.357-0.207 4.688 0 7h-93l234 234 234-234h-86c-0.033-2.985-0.149-5.951 0-9 7.395-151.769 135.14-270.916 285-266 103.029 3.379 189.225 64.83 231 152-49.906-170.892-206.985-296-394-296z"
+				],
+				"attrs": [],
+				"isMulticolor": false,
+				"grid": 0,
+				"tags": [
+					"icon_32x32_undo_grey_1"
+				],
+				"colorPermutations": {
+					"25525525512626261": []
+				}
+			},
+			"attrs": [],
+			"properties": {
+				"order": 8,
+				"id": 0,
+				"prevSize": 32,
+				"code": 59649,
+				"name": "undo"
+			},
+			"setIdx": 0,
+			"setId": 3,
+			"iconIdx": 3
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "icomoon"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {
+				"fontFamily": "icomoon"
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 0,
+			"bgColor": 16777215,
+			"classSelector": ".icon"
+		},
+		"historySize": 100,
+		"showCodes": true,
+		"gridSize": 16,
+		"showGrid": false
+	}
+}

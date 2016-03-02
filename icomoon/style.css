@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?laua3h');
-    src:    url('fonts/icomoon.eot?laua3h#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?laua3h') format('truetype'),
-        url('fonts/icomoon.woff?laua3h') format('woff'),
-        url('fonts/icomoon.svg?laua3h#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?gmg62w');
+    src:    url('fonts/icomoon.eot?gmg62w#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?gmg62w') format('truetype'),
+        url('fonts/icomoon.woff?gmg62w') format('woff'),
+        url('fonts/icomoon.svg?gmg62w#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,5 +26,8 @@
 
 .icon-equlibrium:before {
     content: "\e900";
+}
+.icon-undo:before {
+    content: "\e901";
 }
 
